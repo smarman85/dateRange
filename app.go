@@ -3,16 +3,16 @@ package dateRange
 
 import (
         "fmt"
-        //"strings"
+        "strings"
         "time"
 )
 
 // since=2018-12-03T10:00&until=2018-12-10T10:00
 
 func stringifyTime(rawTime time.Time) string {
-        // stringTime := rawTime.String()
-        // return strings.Split(stringTime, " ")[0]
-        return rawTime.Format("2018-12-01")
+        stringTime := rawTime.String()
+        return strings.Split(stringTime, " ")[0]
+        //return rawTime.Format("2018-12-01")
 }
 
 func timeInfo(day int) time.Time {
@@ -59,6 +59,7 @@ func Run() string {
         } else {
                 searchString = queryString(false, lastMonday)
         }
+
         //fmt.Println(searchString)
         return searchString
 
